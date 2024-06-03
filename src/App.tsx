@@ -22,6 +22,7 @@ function App() {
         <Route path={routes.article.path} element={<Article />} />
         <Route path={routes.userProfile.path} element={<UserProfile />} />
         <Route path={routes.login.path} element={<Login />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </AuthContext.Provider>
   );

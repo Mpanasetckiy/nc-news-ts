@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import NavTop from "../components/NavTop/NavTop";
 import Profile from "../components/Profile/Profile";
+import NavBottom from "../components/NavBottom/NavBottom";
 
 import config from "../config.json";
 import { AuthContext } from "../context/auth-context";
@@ -26,6 +27,7 @@ const UserProfile = () => {
     <>
       <NavTop title="My Profile"></NavTop>
       <Profile user={user} isLoggedIn={isLoggedIn} logout={logout} />
+      <NavBottom />
     </>
   );
 };

@@ -6,6 +6,7 @@
     "userProfile": {
       "path": "/profile",
       "params": []
-    }
+    },
+    "createArticle": { "path": "/create", "params": [] }
   }
 }
