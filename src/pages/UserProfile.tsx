@@ -1,5 +1,11 @@
+import NavTop from "../components/NavTop/NavTop";
+
 const UserProfile = () => {
-  return <></>;
+  return (
+    <>
+      <NavTop title="My Profile"></NavTop>
+    </>
+  );
 };
 
 export default UserProfile;
