@@ -16,3 +16,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+.root__container {
+  padding: 0 2rem;
+}
