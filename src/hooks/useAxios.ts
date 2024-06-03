@@ -23,7 +23,7 @@ export const useAxios = () => {
       url: string,
       method: Method = "GET",
       body = null,
-      headers: AxiosRequestHeaders
+      headers?: AxiosRequestHeaders
     ) => {
       setIsLoading(true);
       setError(null);
