@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "home": { "path": "/", "params": [] },
+    "login": { "path": "/login", "params": [] },
+    "article": { "path": "/articles/:article_id", "params": [":article_id"] },
+    "userProfile": {
+      "path": "/profile",
+      "params": []
+    }
+  }
+}
