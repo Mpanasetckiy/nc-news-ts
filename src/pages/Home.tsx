@@ -1,5 +1,11 @@
+import NavTop from "../components/NavTop/NavTop";
+
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <NavTop isPage={true} title="Articles" />
+    </>
+  );
 };
 
 export default Home;

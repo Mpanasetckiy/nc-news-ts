@@ -1,0 +1,26 @@
+.NavTopView__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 56px;
+  border-bottom: 1px solid var(--grey);
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  z-index: 1049;
+  box-sizing: border-box;
+}
+
+.NavTopView__header h1 {
+  width: 8%;
+  font-size: 0.8rem;
+}
+
+.NavTopView__header h2 {
+  font-size: 1rem;
+}
+
+.NavTopView__header div {
+  min-width: 32px;
+}
