@@ -1,14 +1,16 @@
-interface AuthContextType {
+export interface AuthContextType {
   isLoggedIn: boolean;
   user: User | null;
   login: (user: User) => void;
   logout: () => void;
+  addLikedArticle: (article_id: number, like: number) => void;
 }
 
-interface User {
+export interface User {
   username: string;
   name: string;
   avatar_url: string;
+  likes: { [key: number]: number };
 }
 
 export interface Article {

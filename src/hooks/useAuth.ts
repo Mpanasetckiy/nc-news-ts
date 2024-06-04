@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { User } from "../types/types";
 
 export const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -17,6 +18,20 @@ export const useAuth = () => {
     setUser(null);
   }, []);
 
+  const addLikedArticle = useCallback((article_id: number, like: number) => {
+    const userLocalJson = localStorage.getItem("user");
+    if (userLocalJson) {
+      try {
+        const userLocal: User = JSON.parse(userLocalJson);
+        userLocal.likes = { ...userLocal.likes, [article_id]: like };
+        setUser(userLocal);
+
+        const userJSON = JSON.stringify(userLocal);
+        localStorage.setItem("user", userJSON);
+      } catch (error) {}
+    }
+  }, []);
+
   useEffect(() => {
     const localUser = localStorage.getItem("user");
     if (localUser) {
@@ -32,5 +47,5 @@ export const useAuth = () => {
     }
   }, []);
 
-  return { isLoggedIn, login, logout, user };
+  return { isLoggedIn, login, logout, user, addLikedArticle };
 };

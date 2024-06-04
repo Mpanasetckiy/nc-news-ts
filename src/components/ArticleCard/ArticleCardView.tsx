@@ -1,35 +1,18 @@
 import React from "react";
 
-import { Card, Avatar, Image, Space } from "antd";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  MessageOutlined,
-  LikeOutlined,
-  DislikeOutlined,
-} from "@ant-design/icons";
-
-import dayjs from "dayjs";
+import { Card, Avatar, Image } from "antd";
 
 import "./ArticleCardView.css";
-import { Article } from "../../types/types";
 
+import { Article } from "../../types/types";
+import VotePanel from "../VotePanel/VotePanel";
 interface ArticleCardViewProps {
   currentArticle: Article | undefined;
 }
 
-const IconText = ({ icon, text }: { icon: React.FC; text: string }) => (
-  <Space>
-    {React.createElement(icon)}
-    {text}
-  </Space>
-);
-
 const ArticleCardView: React.FC<ArticleCardViewProps> = ({
   currentArticle,
 }) => {
-  console.log(currentArticle);
-
   return (
     currentArticle && (
       <>
@@ -45,20 +28,7 @@ const ArticleCardView: React.FC<ArticleCardViewProps> = ({
             src={currentArticle.article_img_url}
           />
           <p>{currentArticle.body}</p>
-          <Space className="ArticleCardView__panel">
-            <p>
-              {dayjs(currentArticle.created_at).format("DD/MM/YYYY • HH:mm")}
-            </p>
-            <Space>
-              <MessageOutlined />
-              <p>{currentArticle.comment_count}</p>
-            </Space>
-            <Space>
-              <LikeOutlined />
-              <p>{currentArticle.votes}</p>
-              <DislikeOutlined />
-            </Space>
-          </Space>
+          <VotePanel currentArticle={currentArticle}></VotePanel>
         </Card>
       </>
     )

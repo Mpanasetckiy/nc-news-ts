@@ -1,0 +1,5 @@
+.VotePanelView__panel {
+  gap: 1rem;
+  justify-content: space-between;
+  width: 95%;
+}
