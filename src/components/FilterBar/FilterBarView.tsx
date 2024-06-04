@@ -4,8 +4,13 @@ import { UpOutlined, DownOutlined } from "@ant-design/icons";
 
 import "./FilterBarView.css";
 
+interface SortingOptions {
+  sort_by: string | null;
+  order: string | null;
+}
+
 interface FilterBarViewProps {
-  sortingOptions: { sort_by: string; order: string };
+  sortingOptions: SortingOptions;
   handleSortChange: (value: string) => void;
   handleOrderChange: () => void;
 }

@@ -1,37 +1,35 @@
-import { SetStateAction, useCallback } from "react";
+import { useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import FilterBarView from "./FilterBarView";
 
-interface SortingOptions {
-  sort_by: string;
-  order: string;
-}
-interface FilterBarProps {
-  sortingOptions: SortingOptions;
-  setSortingOptions: (options: SetStateAction<SortingOptions>) => void;
-}
-
-const FilterBar: React.FC<FilterBarProps> = (props) => {
-  const { order } = props.sortingOptions;
+const FilterBar: React.FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams({
+    sort_by: "created_at",
+    order: "desc",
+  });
+  const orderParam = searchParams.get("order");
+  const sortParam = searchParams.get("sort_by");
 
   const handleSortChange = useCallback((sortValue: string) => {
-    if (sortValue) {
-      props.setSortingOptions((prev) => {
-        return { ...prev, sort_by: sortValue };
-      });
+    if (sortValue && orderParam) {
+      setSearchParams({ sort_by: sortValue, order: orderParam });
     }
   }, []);
 
   const handleOrderChange = useCallback(() => {
-    props.setSortingOptions((prev) => {
-      return { ...prev, order: order === "asc" ? "desc" : "asc" };
-    });
-  }, [order]);
+    if (sortParam && orderParam) {
+      setSearchParams({
+        sort_by: sortParam,
+        order: orderParam === "asc" ? "desc" : "asc",
+      });
+    }
+  }, [orderParam]);
 
   return (
     <>
       <FilterBarView
-        sortingOptions={props.sortingOptions}
+        sortingOptions={{ sort_by: sortParam, order: orderParam }}
         handleSortChange={handleSortChange}
         handleOrderChange={handleOrderChange}
       />
