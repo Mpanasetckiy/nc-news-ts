@@ -1,0 +1,18 @@
+.ArticlesView__List h1 {
+  font-size: var(--h1-size);
+  text-align: center;
+}
+
+.ArticlesView__img {
+  margin: 1rem 0;
+}
+
+.ArticlesView__List .ant-list-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ArticlesView__List a {
+  color: inherit;
+}

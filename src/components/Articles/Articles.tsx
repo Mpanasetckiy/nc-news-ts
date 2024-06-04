@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+
 import { useAxios } from "../../hooks/useAxios";
 
+import ArticlesView from "./ArticlesView";
+
 const Articles = () => {
-  const [articles, setArticles] = useState();
+  const [articles, setArticles] = useState([]);
   const { isLoading, sendRequest } = useAxios();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const orderParam = searchParams.get("order");
   const sortParam = searchParams.get("sort_by");
 
@@ -29,7 +32,15 @@ const Articles = () => {
     }
   };
 
-  return <></>;
+  if (!articles.length) {
+    return <></>;
+  }
+
+  return (
+    <>
+      <ArticlesView articles={articles} />
+    </>
+  );
 };
 
 export default Articles;
