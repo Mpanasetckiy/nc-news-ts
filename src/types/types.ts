@@ -19,6 +19,7 @@ export interface Article {
   body: string;
   comment_count: number;
   created_at: string;
+  name?: string;
   title: string;
   topic: string;
   votes: number;
