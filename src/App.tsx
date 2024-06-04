@@ -13,10 +13,12 @@ import "./App.css";
 
 function App() {
   const { routes } = config;
-  const { isLoggedIn, user, login, logout } = useAuth();
+  const { isLoggedIn, user, login, logout, addLikedArticle } = useAuth();
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, user, login, logout }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, user, login, logout, addLikedArticle }}
+    >
       <Routes>
         <Route path={routes.home.path} element={<Home />} />
         <Route path={routes.article.path} element={<Article />} />
