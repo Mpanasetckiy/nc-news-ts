@@ -26,3 +26,13 @@ export interface Article {
   topic: string;
   votes: number;
 }
+
+export interface Comment {
+  article_id: number;
+  author: string;
+  author_avatar_url: string;
+  body: string;
+  comment_id: number;
+  created_at: string;
+  votes: number;
+}
