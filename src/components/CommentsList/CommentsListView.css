@@ -3,3 +3,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.CommentsListView__List li {
+  word-wrap: break-word;
+}
