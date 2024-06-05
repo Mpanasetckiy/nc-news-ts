@@ -7,9 +7,10 @@ import config from "../config.json";
 
 import { AuthContext } from "../context/auth-context";
 import { useAxios } from "../hooks/useAxios";
+import { User } from "../types/types";
 
 const Login = () => {
-  const { isLoggedIn, user, login, logout } = useContext(AuthContext);
+  const { isLoggedIn, login } = useContext(AuthContext);
   const [users, setUsers] = useState<User[]>([]);
   const { sendRequest, isLoading } = useAxios();
   const navigate = useNavigate();

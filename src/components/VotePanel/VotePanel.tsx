@@ -11,7 +11,7 @@ interface VotePanelProps {
 const VotePanel: React.FC<VotePanelProps> = ({ currentArticle }) => {
   const { user, addLikedArticle } = useContext(AuthContext);
   const [currentLikes, setCurrentVotes] = useState<number | undefined>(0);
-  const { isLoading, sendRequest } = useAxios();
+  const { sendRequest } = useAxios();
 
   let currentArticleLike: number | undefined = 0;
 
@@ -31,7 +31,7 @@ const VotePanel: React.FC<VotePanelProps> = ({ currentArticle }) => {
         setCurrentVotes((prev) => (prev !== undefined ? prev + vote : vote));
       }
 
-      const { article } = await sendRequest(
+      await sendRequest(
         `${import.meta.env.VITE_API_URL}/articles/${
           currentArticle?.article_id
         }`,

@@ -1,5 +1,4 @@
 import { Button, Input, Space } from "antd";
-import { PlusCircleOutlined } from "@ant-design/icons";
 
 import "./CreateCommentView.css";
 
