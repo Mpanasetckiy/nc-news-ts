@@ -13,7 +13,7 @@ Northcoders News is a web application built using React.ts. It provides users wi
 
 ### Frontend URL
 
-[Link to Deployed Version](https://nc-news-hq9p.onrender.com)
+[Link to Deployed Version](https://nc-news-ts-008k.onrender.com)
 
 ### Backend URLs
 
@@ -32,7 +32,7 @@ Ensure that your system meets the following requirements to use the API:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/Mpanasetckiy/nc-news
+   git clone https://github.com/Mpanasetckiy/nc-news-ts
    ```
 
 2. Navigate to the project directory:
