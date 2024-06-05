@@ -21,30 +21,29 @@ const FilterBarView: React.FC<FilterBarViewProps> = (props) => {
   return (
     <>
       <Collapse
+        className="FilterBarView__Collapse"
         items={[
           {
             key: "1",
             label: "Sort articles",
             children: (
-              <Flex gap="middle" vertical>
-                <Space.Compact>
-                  <Select
-                    style={{ width: "100%" }}
-                    defaultValue={props.sortingOptions.sort_by}
-                    options={[
-                      { value: "author", label: "Sort by: Author" },
-                      { value: "created_at", label: "Sort by: Date" },
-                      { value: "title", label: "Sort by: Title" },
-                      { value: "topic", label: "Sort by: Topic" },
-                      { value: "votes", label: "Sort by: Votes" },
-                    ]}
-                    onChange={props.handleSortChange}
-                  />
-                  <Button shape="circle" onClick={props.handleOrderChange}>
-                    {order === "asc" ? <UpOutlined /> : <DownOutlined />}
-                  </Button>
-                </Space.Compact>
-              </Flex>
+              <Space className="FilterBarView__Space">
+                <Select
+                  style={{ width: "100%" }}
+                  defaultValue={props.sortingOptions.sort_by}
+                  options={[
+                    { value: "author", label: "Sort by: Author" },
+                    { value: "created_at", label: "Sort by: Date" },
+                    { value: "title", label: "Sort by: Title" },
+                    { value: "topic", label: "Sort by: Topic" },
+                    { value: "votes", label: "Sort by: Votes" },
+                  ]}
+                  onChange={props.handleSortChange}
+                />
+                <Button onClick={props.handleOrderChange}>
+                  {order === "asc" ? <UpOutlined /> : <DownOutlined />}
+                </Button>
+              </Space>
             ),
           },
         ]}

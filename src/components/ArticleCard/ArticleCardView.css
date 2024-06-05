@@ -1,8 +1,17 @@
-/* .ArticleCardView__Card {
-  margin-bottom: 50px;
-} */
+.ArticleCardView__Card {
+  border-radius: 0;
+  color: unset;
+  background-color: unset;
+  border: none;
+  border-bottom: 1px solid var(--border-grey);
+  margin-bottom: 1rem;
+}
 
 .ArticleCardView__Card h1 {
   font-size: 1.5rem;
   text-align: center;
+}
+
+.ArticleCardView__Card .ant-card-meta-detail * {
+  color: unset !important;
 }

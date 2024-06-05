@@ -16,7 +16,7 @@ const ArticleCardView: React.FC<ArticleCardViewProps> = ({
   return (
     currentArticle && (
       <>
-        <Card className="ArticleCardView__Card" actions={[]}>
+        <Card className="ArticleCardView__Card">
           <Card.Meta
             avatar={<Avatar src={currentArticle.author_avatar_url} />}
             title={currentArticle.name}

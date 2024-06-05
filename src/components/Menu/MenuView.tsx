@@ -33,13 +33,17 @@ const MenuView: React.FC = () => {
     <Space direction="vertical">
       <Space wrap>
         <Dropdown
+          className="MenuView__DropDown"
           menu={{
             items,
           }}
           trigger={["click"]}
           placement="bottomRight"
         >
-          <Button type="text" icon={<MenuOutlined />}></Button>
+          <Button
+            type="text"
+            icon={<MenuOutlined className="MenuView__icon" />}
+          ></Button>
         </Dropdown>
       </Space>
     </Space>
