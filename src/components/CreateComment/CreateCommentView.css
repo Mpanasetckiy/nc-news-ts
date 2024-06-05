@@ -5,4 +5,14 @@
 
 .CreateCommentView__container textarea {
   width: 70vw;
+  background-color: unset !important;
+  color: unset;
+}
+
+.CreateCommentView__container textarea::placeholder {
+  color: unset;
+}
+
+.CreateCommentView__container textarea:hover {
+  background-color: unset !important;
 }

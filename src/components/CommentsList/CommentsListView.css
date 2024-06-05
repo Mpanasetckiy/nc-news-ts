@@ -1,9 +1,28 @@
-.CommentsListView__List .ant-list-item-action {
+.CommentsListView__List {
+  color: var(--color);
+}
+
+.ant-list-item-action {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.CommentsListView__List h4 {
+  color: var(color);
+}
+
 .CommentsListView__List li {
   word-wrap: break-word;
+  color: var(--paper) !important;
+}
+
+.CommentsListView__List .ant-list-item {
+  border-block-end: 1px solid var(--border-grey);
+}
+
+@media (prefers-color-scheme: light) {
+  .CommentsListView__List li {
+    color: var(--grey) !important;
+  }
 }

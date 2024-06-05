@@ -1,4 +1,14 @@
 .ant-dropdown-menu-item {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.MenuView__icon {
+  color: var(--paper);
+}
+
+@media (prefers-color-scheme: light) {
+  .MenuView__icon {
+    color: var(--coal);
+  }
 }

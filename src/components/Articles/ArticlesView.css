@@ -16,3 +16,24 @@
 .ArticlesView__List a {
   color: inherit;
 }
+.ArticlesView__List .ant-list-item {
+  border-block-end: 1px solid var(--border-grey);
+}
+.ArticlesView__List .ant-list-item-meta-description {
+  color: var(--paper) !important;
+}
+
+.ArticlesView__List .ant-list-item-action li {
+  color: var(--paper) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  .ArticlesView__List .ant-list-item-meta-description {
+    color: var(--grey) !important;
+  }
+
+  .ArticlesView__List .ant-list-item-action li,
+  .ant-list-item-action p {
+    color: var(--grey) !important;
+  }
+}

@@ -4,13 +4,16 @@
   font-weight: 400;
   --h1-size: 16px;
 
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #213547;
   --paper: #fffffa;
   --coal: #242424;
-  --bg-color: #ffffff;
-  --grey: #f0f0f0;
+  --grey: rgba(0, 0, 0, 0.45);
+  --border-grey: #d9d9d9;
 
   color-scheme: light dark;
-  color: var(--bg-color);
+
+  color: var(--bg-color-light);
   background-color: var(--coal);
 
   font-synthesis: none;
@@ -37,6 +40,38 @@ body {
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--paper) !important;
+}
+
+.ant-select-selector,
+.ant-collapse-header {
+  background: unset !important;
+  color: var(--paper) !important;
+}
+
+.ant-select-dropdown,
+.ant-dropdown-menu {
+  background-color: var(--coal) !important;
+}
+
+.ant-dropdown-menu {
+  border: 0.5px solid var(--paper);
+}
+
+.ant-select-item-option,
+.ant-dropdown-menu li {
+  color: var(--paper) !important;
+}
+
+.ant-select-item-option-active {
+  color: var(--coal) !important;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -44,12 +79,13 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--paper) !important;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--coal) !important;
+  color: var(--paper) !important;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -58,18 +94,44 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--coal);
+    background-color: var(--paper);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: var(--coal) !important;
+  }
+
+  .ant-select-selector {
+    color: var(--coal) !important;
+  }
+
+  .ant-select-dropdown,
+  .ant-dropdown-menu {
+    background-color: var(--bg-color-light) !important;
+  }
+
+  .ant-select-item-option,
+  .ant-dropdown-menu li,
+  .ant-collapse-header {
+    color: var(--coal) !important;
+  }
+
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    border: 1px solid grey !important;
+    background-color: var(--paper) !important;
+    color: var(--coal) !important;
   }
 }

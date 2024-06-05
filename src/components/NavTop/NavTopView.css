@@ -4,8 +4,8 @@
   justify-content: space-between;
   padding: 0 16px;
   height: 56px;
-  background-color: var(--bg-color);
-  border-bottom: 1px solid var(--grey);
+  background-color: unset;
+  border-bottom: 1px solid var(--paper);
   position: sticky;
   top: 0;
   z-index: 1049;
@@ -23,4 +23,10 @@
 
 .NavTopView__header div {
   min-width: 32px;
+}
+
+@media (prefers-color-scheme: light) {
+  .NavTopView__header {
+    border-bottom: 1px solid var(--border-grey);
+  }
 }
