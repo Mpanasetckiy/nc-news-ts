@@ -1,4 +1,4 @@
-import { Flex, Space, Select, Collapse, Button } from "antd";
+import { Space, Select, Collapse, Button } from "antd";
 
 import { UpOutlined, DownOutlined } from "@ant-design/icons";
 

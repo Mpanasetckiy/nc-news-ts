@@ -1,5 +1,6 @@
 import ProfileView from "./ProfileView";
 
+import { User } from "../../types/types";
 export interface ProfileProps {
   user: User | null;
   isLoggedIn: boolean;
