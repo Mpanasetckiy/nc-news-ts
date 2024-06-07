@@ -1,7 +1,13 @@
 import NavBottomView from "./NavBottomView";
 
+import { MobileOnly } from "../../styles/styles";
+
 const NavBottom = () => {
-  return <NavBottomView />;
+  return (
+    <MobileOnly>
+      <NavBottomView />
+    </MobileOnly>
+  );
 };
 
 export default NavBottom;
