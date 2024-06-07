@@ -7,6 +7,11 @@
   margin-bottom: 1rem;
 }
 
+.ArticleCardView__Card .ant-image {
+  display: flex;
+  justify-content: center;
+}
+
 .ArticleCardView__Card h1 {
   font-size: 1.5rem;
   text-align: center;

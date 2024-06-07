@@ -3,8 +3,15 @@
   text-align: center;
 }
 
+.ArticlesView__li .ant-image {
+  display: flex;
+  justify-content: center;
+}
+
 .ArticlesView__img {
   margin: 1rem 0;
+  max-width: 700px;
+  width: auto;
 }
 
 .ArticlesView__List .ant-list-item-action {
@@ -16,9 +23,11 @@
 .ArticlesView__List a {
   color: inherit;
 }
+
 .ArticlesView__List .ant-list-item {
   border-block-end: 1px solid var(--border-grey);
 }
+
 .ArticlesView__List .ant-list-item-meta-description {
   color: var(--paper) !important;
 }

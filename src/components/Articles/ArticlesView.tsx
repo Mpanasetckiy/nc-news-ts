@@ -35,6 +35,7 @@ const ArticlesView: React.FC<ArticlesViewProps> = ({ articles }) => {
         dataSource={articles}
         renderItem={(article: Article) => (
           <List.Item
+            className="ArticlesView__li"
             key={article.article_id}
             actions={[
               <p>{dayjs(article.created_at).format("DD/MM/YYYY • HH:mm")}</p>,
@@ -64,7 +65,9 @@ const ArticlesView: React.FC<ArticlesViewProps> = ({ articles }) => {
               className="ArticlesView__img"
               src={article.article_img_url}
             />
-            <p>{article.body}</p>
+            <Link to={getRoute(routes.article, String(article.article_id))}>
+              <p>{article.body}</p>
+            </Link>
           </List.Item>
         )}
       />
