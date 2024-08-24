@@ -58,7 +58,6 @@ const ArticlesView: React.FC<ArticlesViewProps> = ({ articles }) => {
               title={`@${article.author}`}
               description={`#${article.topic}`}
             />
-
             <Link to={getRoute(routes.article, String(article.article_id))}>
               <h1>{article.title}</h1>
             </Link>

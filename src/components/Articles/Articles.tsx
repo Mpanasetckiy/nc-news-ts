@@ -33,7 +33,7 @@ const Articles = () => {
     }
   };
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <div style={{ padding: "1rem" }}>
         <Skeleton.Avatar size={"large"} active />
