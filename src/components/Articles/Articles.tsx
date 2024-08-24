@@ -33,8 +33,16 @@ const Articles = () => {
     }
   };
 
-  if (isLoading) {
-    return <Skeleton active avatar></Skeleton>;
+  if (!isLoading) {
+    return (
+      <div style={{ padding: "1rem" }}>
+        <Skeleton.Avatar size={"large"} active />
+        <div style={{ textAlign: "center" }}>
+          <Skeleton.Image active />
+        </div>
+        <Skeleton active />
+      </div>
+    );
   }
 
   return (
