@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Skeleton } from "antd";
 
 import { useAxios } from "../../hooks/useAxios";
 
@@ -32,8 +33,8 @@ const Articles = () => {
     }
   };
 
-  if (!articles.length) {
-    return <></>;
+  if (isLoading) {
+    return <Skeleton active avatar></Skeleton>;
   }
 
   return (
